@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "required": [
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "car_id": {
+            "type": "integer"
+        },
+        "user_id": {
+            "type": "integer"
+        }
+    }
+}

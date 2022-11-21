@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "required": [
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+        },
+        "last_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+        },
+        "dob": {
+            "type": "string",
+            "format_datetime": "date"
+        },
+        "email_id": {
+          "type": "string",
+          "regex": "^\\w+([.-]?\\w+)*@\\w+([.-]?\\w+)*(\\.\\w{2,})+$"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "internal",
+                "customer"
+            ]
+        }
+    }
+}

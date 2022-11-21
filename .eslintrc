@@ -1,0 +1,52 @@
+{
+    "extends": [
+        "airbnb-base",
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "import",
+        "jest"
+    ],
+    "env": {
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "camelcase": [
+            "error",
+            {
+                "properties": "never",
+                "ignoreDestructuring": true
+            }
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "consistent-return": "off",
+        "eol-last": "off",
+        "no-continue":"off",
+        "indent":"off",
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-restricted-syntax": "off",
+        "prefer-destructuring": [
+            "error",
+            {
+                "array": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+# Docker Compose Postgres
+#
+# Reference
+# https://store.docker.com/images/postgres
+# https://github.com/sguter90/docker-compose-gitea/blob/master/docker-compose.yml
+
+version: "3"
+
+services:
+  postgres:
+    image: postgres:13.5-alpine
+    expose:
+      - "5432"
+    hostname: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+  mana-service:
+    image: xenia-test
+    container_name: xenia-test
+    depends_on:
+      - postgres
+    expose:
+      - "8081"
+    links:
+      - "postgres:postgres"
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+
+volumes:
+  db-data:
+    driver: local
